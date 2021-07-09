@@ -1,0 +1,17 @@
+version: '3.6'
+
+services:
+  db:
+    image: mysql:5.7
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: app_db
+      MYSQL_USER: db_user
+      MYSQL_PASSWORD: db_user
+    ports:
+      - "6033:3306"
+    volumes:
+      - type: bind
+        source: D:/CPartition/wamp64/bin/mysql/mysql5.7.31
+        target: /var/lib/mysql
